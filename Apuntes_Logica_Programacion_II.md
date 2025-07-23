@@ -1,6 +1,8 @@
-# Clase 1 _ 21-julio
+# Notas_Logica_Programacion_II
 
-## Tipos de datos
+## Clase 1 _ 21-julio
+
+### Tipos de datos
 
 * Entros: int, bute, short, lon
 * Real: float, double
@@ -8,9 +10,9 @@
 * Caracter: char
 * Cadena: string
 
-## Introduccion de entrada por teclado
+### Introduccion de entrada por teclado
 
-### Opcion #1
+#### Opcion #1
 
 impor java.util.Scanner; // ***libreria para trabajar con el Scanner***
 
@@ -22,7 +24,7 @@ Scanner sc = new Scanner(System.in); // ***Definicion y creacion del Scanner***
 
 < variable > = sc.nextFloat(); // Para leer un Real
 
-### Opcion #2
+#### Opcion #2
 
 impor javax.swing.* // ***Libreria para cuadros de dialogo***
 
@@ -32,9 +34,9 @@ parse es para trasformar al tipo desesado
 
 < variable > = JOptionPane.showInputDialog("< mensaje >");
 
-## Instruccion de salida por pantalla
+### Instruccion de salida por pantalla
 
-### Opcion #1
+#### Opcion #1
 
 Sistem.out.print**ln**("Ingrese el primer numero "); // ***mostrar un mensaje***
 
@@ -42,13 +44,15 @@ Sistem.out.print**ln**("Ingrese el primer numero " + variable);
 
 ***ln*** permite hacer un salto de line despues de imprimir el texto
 
+#### Opcion #2
+
 JOptionPane.showMessageDialog(null , "< mensaje >");
 
 Operasionde asignacion (=)
 
 < variable > = < variable >
 
-## Funciones aritmeticas
+### Funciones aritmeticas
 
 * suma (+)
 
@@ -60,7 +64,7 @@ potenciacion (**Math**.pow(base, exponente))
 
 **Math** contiene muchas operaciones matematicas
 
-## Operaciones logicos
+### Operaciones logicos
 
 * Not (!)
 
@@ -68,20 +72,25 @@ potenciacion (**Math**.pow(base, exponente))
 
 * or (||)
 
-## estructura selectiva simple 
+### estructura selectiva simple
 
+```java
 if ( < condicion > ){
     < accion >;
 }
+```
 
-estructura selectiva doble
+### estructura selectiva doble
 
+```java
 if ( < condicion > ){
     < accion >;}
 else{
     < accion >;}
+```
 
-## codigo inicial
+
+### codigo inicial
 
 ```java
 package pruebainicial;
@@ -126,5 +135,39 @@ public class Ejercicio2 {
         
         JOptionPane.showMessageDialog(null, "El resultado es: " + y );
     }
+}
+```
+
+## Clase_2-23_julio
+
+### estructuras de control
+
+#### swith
+
+```java
+
+swith(<exprecion>){
+case<valor 1>: <Accion 1>;
+            Breack;
+case<valor 2>: <Accion 2>;
+            Breack;
+case<valor 3>: <Accion 3>;
+            Breack;
+case<valor 4>: <Accion 4>;
+            Breack;
+
+default: <Acciones por defecto>;
+}
+```
+
+#### if
+
+```java
+if(<condicion 1>){
+    <Accion 1>;}
+else if(Condicion 2) {
+    <Accion 1>;}
+else {
+    return
 }
 ```
