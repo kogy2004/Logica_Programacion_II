@@ -145,7 +145,6 @@ public class Ejercicio2 {
 #### swith
 
 ```java
-
 swith(<exprecion>){
 case<valor 1>: <Accion 1>;
             Breack;
@@ -169,5 +168,77 @@ else if(Condicion 2) {
     <Accion 1>;}
 else {
     return
+}
+```
+
+## Clase_3-28_julio
+### Cilcos
+#### while
+
+```java
+while(<condicion>){
+    <Acciones del ciclo>;
+}
+```
+
+#### for
+
+```java
+for(<inicializacion>; <condicion>; <incremento>){
+    <acciones del ciclo>;
+}
+
+inicializacion: <contador> = <valor inicial>
+
+condicion: <contador><operador relacional><valor final>
+
+incremento: <contador> = <contador> + <valor incremento> o <contador> <expresion de incremento>
+
+```
+
+#### do...while
+
+```java
+do{
+    <Acciones del ciclo>;
+}while(<condicion>);
+```
+
+### Arreglos (Vectores)
+
+* Homogeneos: contiene datso de un mismo tipo
+* Ordenados: Cada posicion esta identificada por un indice
+* Finitos: Tiene un tamaño prestablecido
+
+#### Definir Vectores
+
+**Tipo_de_dato nombre_vector[] = new tipo_de_dato[tamaño];**
+
+```java
+int vec[]= new int[8];
+```
+
+#### Acceder a elementos del vector 
+
+**Nombre_vector[posicion] = valor** 
+
+```java
+vec[4] = 9
+```
+
+#### llenar un vector 
+
+```java
+for(int posicion=0; posicion<tamaño; posicion++){
+    System.out.println("Ingrese el elemento en la posicion " + posicion);
+    nombre_vector[posicion] = sc.nextInt();
+}
+```
+
+#### mostrar el vector 
+
+```java
+for(int posicion=0; posicion<tamaño; posicion++){
+    System.out.println(nombre_vector[posicion]);
 }
 ```
