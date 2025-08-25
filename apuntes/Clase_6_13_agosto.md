@@ -92,7 +92,7 @@ public class arreglosBidimensionalesDinamicos {
 
 ## HashMap
 
-Es una coleccion que ewlaciona una clave con un valor, donde la clave es un valor unico
+Es una coleccion que relaciona una clave con un valor, donde la clave es un valor unico
 
 ### Sintaxis
 
@@ -144,5 +144,111 @@ Devuelve la coleccion de valores del mapa
 
 #### EntrySet
  
-
 Devuelve una vista de los valores del mapa 
+
+#### size
+
+devuelve el numero de elementos claves valor del hashMap
+
+#### getordefault 
+
+#### putAll
+
+copia todo lo de un mapa en otro 
+
+```java
+
+package javaapplicationk;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class NewClass1 {
+
+    static Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        HashMap<String, Float> productos = new HashMap<>();
+        int opcion = 0;
+        float precio;
+        String codigo;
+
+        while (opcion != 5) {
+            System.out.println("Introduce el numero de la opcion que quieras: ");
+            System.out.println("1. Introducir producto");
+            System.out.println("2. Modificar precio");
+            System.out.println("3. Mostrar todos los productos");
+            System.out.println("4. Eliminar producto");
+            System.out.println("5. salir");
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("Introduce el codigo del producto");
+                    codigo = sc.next();
+                    System.out.println("Introduce el precio del producto");
+                    precio = sc.nextFloat();
+                    guardarProducto(codigo, precio, productos);
+                    break;
+
+                case 2:
+                    System.out.println("Introduce el codigo del productodel que quieres cambiar el precio ");
+                    codigo = sc.next();
+                    modificarPrecio(codigo, productos);
+                    break;
+                case 3:
+                    // mostrarProductos(productos);
+                    System.out.println(productos.toString());
+                    break;
+
+                case 4:
+                    System.out.println("Introduce el codigo del producto a eliminar");
+                    codigo = sc.next();
+                    eliminarProducto(codigo, productos);
+                    break;
+                case 5:
+                    System.out.println("Ha salido del sistema");
+                default:
+                    System.out.println("Ingresa una opcion valida");
+            }
+        }
+    }
+
+    private static void guardarProducto(String codigo, float precio, HashMap<String, Float> productos) {
+        if (!productos.containsKey(codigo)) {
+            productos.put(codigo, precio);
+        } else {
+            System.out.println("No se puede introducir el producto. el codigo esta repetido");
+        }
+    }
+
+    private static void modificarPrecio(String codigo, HashMap<String, Float> productos) {
+        if (productos.containsKey(codigo)) {
+            System.out.println("Ingresa el nuevo precio: ");
+            productos.put(codigo, sc.nextFloat());
+        } else {
+            System.out.println("No se puede introducir el producto. el codigo no existe");
+        }
+    }
+
+    private static void mostrarProductos(HashMap<String, Float> productos) {
+        String clave;
+        Iterator<String> listaClavesProductos = productos.keySet().iterator();
+        while (listaClavesProductos.hasNext()) {
+            clave = listaClavesProductos.next();
+            System.out.println(clave + " " + productos.get(clave));
+        }
+    }
+
+    private static void eliminarProducto(String codigo, HashMap<String, Float> productos) {
+        if (productos.containsKey(codigo)) {
+            productos.remove(codigo);
+        } else {
+            System.out.println("No existe este producto");
+        }
+    }
+}
+```
+
