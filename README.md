@@ -5,7 +5,6 @@ Este repositorio contiene los apuntes y ejemplos desarrollados durante el curso 
 ## Estructura del repositorio
 
 - `apuntes/`: Carpeta con los apuntes de cada clase, organizados por fecha.
-- `Apuntes_Logica_Programacion_II.md`: Archivo general con notas y resúmenes temáticos.
 - `README.md`: Este índice y presentación del repositorio.
 
 ## Índice de clases
