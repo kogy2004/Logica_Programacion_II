@@ -1,8 +1,10 @@
-# Clase 6 - 13 agosto
+# Clase 6 - 13 de agosto
 
 ## ArrayList bidimensionales dinámicos
 
-### llenar Arreglo Bidimensional
+Un ArrayList bidimensional es una estructura que permite almacenar listas dentro de listas, simulando una matriz pero con tamaño dinámico.
+
+### Llenar Arreglo Bidimensional
 
 ```java
 import java.util.ArrayList;
@@ -29,7 +31,7 @@ public class llenarArregloBidimensional {
         for (int i = 0; i < n; i++) {
             ArrayList<Integer> vectorFila = new ArrayList<>();
             for (int j = 0; j < m; j++) {
-                System.out.println("Ingresa un numero");
+                System.out.println("Ingresa un número");
                 vectorFila.add(sc.nextInt());
             }
             v.add(vectorFila);
@@ -70,7 +72,7 @@ public class arreglosBidimensionalesDinamicos {
         for (int i = 0; i < n; i++) {
             ArrayList<Integer> vectorFila = new ArrayList<>();
             for (int j = 0; j < m; j++) {
-                System.out.println("Ingresa un numero");
+                System.out.println("Ingresa un número");
                 vectorFila.add(sc.nextInt());
             }
             v.add(vectorFila);
@@ -84,80 +86,64 @@ public class arreglosBidimensionalesDinamicos {
                 Object o = a.get(j);
                 l.add(o);
             }
-
         }
     }
 }
 ```
 
+> **Nota:** Es recomendable usar tipos genéricos en las declaraciones de ArrayList para evitar advertencias y errores de tipo.
+
+### Convertir matriz en lista
+
+```java
+public static void matrizEnLista(ArrayList<ArrayList> v, int n, int m, ArrayList l) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            ArrayList a = v.get(i);
+            Object o = a.get(j);
+            l.add(o);
+        }
+    }
+}
+```
+
+**Ventajas de ArrayList bidimensional:**
+
+- Permite modificar el tamaño de filas y columnas en tiempo de ejecución.
+- Es útil para almacenar datos tabulares cuando no se conoce el tamaño previamente.
+
 ## HashMap
 
-Es una coleccion que relaciona una clave con un valor, donde la clave es un valor unico
+Un HashMap es una colección que relaciona una clave única con un valor. Es útil para búsquedas rápidas y asociaciones.
 
 ### Sintaxis
 
 ```java
-HashMap <tipo_dato_clave, tipo_dato_valor> nombreHashMap = new HashMap <>();
+HashMap<TipoClave, TipoValor> nombreHashMap = new HashMap<>();
 ```
 
-### Metodos mas usados 
+### Métodos más usados
 
-#### Put
+- **put(clave, valor):** Inserta o actualiza un valor asociado a una clave.
+- **get(clave):** Obtiene el valor asociado a la clave.
+- **containsKey(clave):** Verifica si la clave existe.
+- **containsValue(valor):** Verifica si el valor existe.
+- **remove(clave):** Elimina la entrada por clave.
+- **toString():** Imprime el contenido del HashMap.
+- **clear():** Elimina todas las entradas.
+- **isEmpty():** Devuelve `true` si el mapa está vacío.
+- **keySet():** Devuelve el conjunto de claves.
+- **values():** Devuelve la colección de valores.
+- **entrySet():** Devuelve una vista de los pares clave-valor.
+- **size():** Devuelve el número de elementos.
+- **getOrDefault(clave, valorPorDefecto):** Devuelve el valor asociado a la clave o el valor por defecto si no existe.
+- **putAll(otroMapa):** Copia todo el contenido de otro mapa.
 
-Para ***actualizar*** un valor de un HashMap la clave. los parametros son **Clave** y **Valor**. En el caso de que la clave ***no exista se creara***. 
+> **Consejo:** Las claves deben ser únicas. Si agregas una clave existente, su valor se sobrescribe.
 
-#### Get 
-
-Para ***obtener un valor*** de un HashMap dada la **clave**. por ende el parametro es la clave y **retorna el valor** asociado a dicha clave.
-
-#### ContainsKey
-
-Para ***buscar*** en un HashMap dada la **clave**. El parametro es la clave y el **retorno es un booleano**, indicando si la clave existe o no.
-
-#### ContainsValue
-
-Para ***buscar*** en un HashMap dada el **valor**. El parametro es la clave y el **retorno es un booleano**, indicando si el valor existe o no.
-
-#### Remove
-
-Para ***eliminar*** una entrada de un HashMap dada la **clave**. El parametro es la clave del elemento a eliminar.
-
-#### toString
-
-Para ***imprimir*** el contenido del HashMap.
-
-#### Clear
-
-Elimina todas las entradas del HashMap
-
-#### IsEmpty
-
-Devuelve True si el mapa esta vacio
-
-#### KeySet
-
-Devuelve un conjunto de las claves del mapa 
-
-#### Values
-
-Devuelve la coleccion de valores del mapa
-
-#### EntrySet
- 
-Devuelve una vista de los valores del mapa 
-
-#### size
-
-devuelve el numero de elementos claves valor del hashMap
-
-#### getordefault 
-
-#### putAll
-
-copia todo lo de un mapa en otro 
+### Ejemplo de uso de HashMap
 
 ```java
-
 package javaapplicationk;
 
 import java.util.HashMap;
@@ -220,7 +206,7 @@ public class NewClass1 {
         if (!productos.containsKey(codigo)) {
             productos.put(codigo, precio);
         } else {
-            System.out.println("No se puede introducir el producto. el codigo esta repetido");
+            System.out.println("No se puede introducir el producto. El código está repetido.");
         }
     }
 
@@ -252,3 +238,14 @@ public class NewClass1 {
 }
 ```
 
+**Buenas prácticas:**
+
+- Usa tipos genéricos en HashMap para evitar errores de tipo.
+- Valida la entrada del usuario antes de agregar o modificar datos.
+- Utiliza métodos como `containsKey` para evitar duplicados.
+
+## Resumen
+
+- Los ArrayList bidimensionales permiten trabajar con matrices dinámicas.
+- HashMap es ideal para almacenar pares clave-valor y realizar búsquedas rápidas.
+- Es importante validar los datos y usar los métodos adecuados para manipular las colecciones.

@@ -1,7 +1,6 @@
-
 # Apuntes de Lógica de Programación II
 
-Este repositorio contiene los apuntes tomados durante el curso universitario de **Lógica de Programación II**. Aquí encontrarás explicaciones, ejemplos y ejercicios prácticos organizados por clase, ideales para repasar y consultar conceptos clave de la materia.
+Este repositorio contiene los apuntes y ejemplos desarrollados durante el curso universitario de **Lógica de Programación II**. Aquí encontrarás explicaciones, ejercicios prácticos y fragmentos de código en Java, organizados por clase y fecha, ideales para repasar y consultar conceptos clave de la materia.
 
 ## Estructura del repositorio
 
@@ -15,16 +14,19 @@ Este repositorio contiene los apuntes tomados durante el curso universitario de 
 - [Clase 2 - 23 julio](./apuntes/Clase_2_23_julio.md)
 - [Clase 3 - 28 julio](./apuntes/Clase_3_28_julio.md)
 - [Clase 4 - 08 agosto](./apuntes/Clase_4_08_agosto.md)
+- [Clase 5 - 11 agosto](./apuntes/Clase_5_11_agosto.md)
+- [Clase 6 - 13 agosto](./apuntes/Clase_6_13_agosto.md)
+- [Clase 7 - 27 agosto](./apuntes/Clase_7_27_agosto.md)
 
 ## ¿Cómo usar este repositorio?
 
 1. Revisa el índice y accede a los apuntes de cada clase según la fecha.
 2. Consulta el archivo general para ver resúmenes y temas transversales.
-3. Utiliza los ejemplos y ejercicios para practicar y reforzar tus conocimientos.
+3. Utiliza los ejemplos y ejercicios para practicar y reforzar tus conocimientos de programación en Java.
 
 ## Sobre la materia
 
-Lógica de Programación II es una asignatura orientada a fortalecer las bases de la programación en Java.
+Lógica de Programación II es una asignatura orientada a fortalecer las bases de la programación estructurada y orientada a objetos en Java, dirigida a estudiantes universitarios que buscan mejorar sus habilidades en resolución de problemas y desarrollo de software.
 
 ## Autor
 

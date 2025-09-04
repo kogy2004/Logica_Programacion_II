@@ -1,46 +1,62 @@
-# Clase 7 - 27 agosto
+# Clase 7 - 27 de agosto
 
-## POO
+## Programación Orientada a Objetos (POO)
 
-### definir atributos
+La POO es un paradigma que organiza el software en objetos que combinan datos (atributos) y comportamientos (métodos).
 
-son caracteristicas especificas del artibuto
+### Definir atributos
 
-#### Static
+Los atributos son características específicas de una clase.
 
-El atributo pertenece a la clase, no alos onjetos creados a partir de ella
+#### static
+
+El atributo pertenece a la clase, no a los objetos creados a partir de ella. Se accede usando el nombre de la clase.
 
 #### final
 
-El atributo es una constante, en ese caso debe de tener balor inicial obligatoriamente. por convencion en java las constantes se ecriben en mayusculas
-
-### encapsulamiento 
-
-atributos y metodos forman el objeto 
-
-### ocultamiento 
-
-solo es posible modificar esos atributos por medio de los metodos de el objeto, nada mas lo pueden manipular 
-
-### Diagrama de clases UML
-| producto |
-|-------|
-| - Codigo: string |
-| - Nombre: string |
-| - Extencion: interger |
-| - Stock minimo: interger |
-| - Stock maximno: interger |
-| - Costo: decimal |
-| - Precio: decimal |
-| - Ganancia: decimal |
-|-------|
-| + actualizarInventario(): integer|
-| + reportarExixtencias(): interger|
-
-
+El atributo es una constante, debe tener valor inicial obligatoriamente. Por convención en Java, las constantes se escriben en mayúsculas.
 
 ```java
+public static final double PI = 3.1416;
+```
 
+### Encapsulamiento
+
+Los atributos y métodos forman el objeto. El encapsulamiento permite ocultar los detalles internos y exponer solo lo necesario mediante métodos públicos (getters y setters).
+
+### Ocultamiento
+
+Solo es posible modificar los atributos privados por medio de los métodos del objeto. Así se protege la integridad de los datos.
+
+**Ventajas del encapsulamiento:**
+
+- Seguridad de los datos.
+- Flexibilidad para cambiar la implementación interna sin afectar el uso externo.
+- Facilita el mantenimiento y la reutilización del código.
+
+### Diagrama de clases UML
+
+Un diagrama UML representa gráficamente la estructura de una clase.
+
+| Producto |
+|----------|
+| - codigo: String |
+| - nombre: String |
+| - extensión: Integer |
+| - stockMinimo: Integer |
+| - stockMaximo: Integer |
+| - costo: Double |
+| - precio: Double |
+| - ganancia: Double |
+|----------|
+| + actualizarInventario(): Integer |
+| + reportarExistencias(): Integer |
+
+> Nota: Los signos "-" y "+" indican visibilidad privada y pública respectivamente.
+
+### Ejemplo de clase en Java
+
+```java
 package javaapplicationk;
 
 public class Empleado {
@@ -142,6 +158,7 @@ public class Empleado {
 }
 ```
 
+### Ejemplo de uso de la clase Empleado
 
 ```java
 package javaapplicationk;
@@ -160,27 +177,27 @@ public class Empresa {
         int ne, ae, an;
         Double s, p;
 
-        System.out.println("ingrese la cantidad de empleados");
+        System.out.println("Ingrese la cantidad de empleados");
         ne = sc.nextInt();
 
         Empleado e[] = new Empleado[ne];
 
         for (int i = 0; i < ne; i++) {
-            System.out.println("ingrese el dni del empleado" + (i + 1));
+            System.out.println("Ingrese el DNI del empleado " + (i + 1));
             d = sc.next();
-            System.out.println("ingrese el cargo del empleado" + (i + 1));
+            System.out.println("Ingrese el cargo del empleado " + (i + 1));
             c = sc.next();
-            System.out.println("ingrese el nombre del empleado" + (i + 1));
+            System.out.println("Ingrese el nombre del empleado " + (i + 1));
             n = sc.next();
-            System.out.println("ingrese la direccion del empleado" + (i + 1));
+            System.out.println("Ingrese la dirección del empleado " + (i + 1));
             dir = sc.next();
-            System.out.println("ingrese el año de entrada del empleado" + (i + 1));
+            System.out.println("Ingrese el año de entrada del empleado " + (i + 1));
             ae = sc.nextInt();
-            System.out.println("ingrese el año de nacimiento del empleado" + (i + 1));
+            System.out.println("Ingrese el año de nacimiento del empleado " + (i + 1));
             an = sc.nextInt();
-            System.out.println("ingrese el sueldo basico del empleado" + (i + 1));
+            System.out.println("Ingrese el sueldo básico del empleado " + (i + 1));
             s = sc.nextDouble();
-            System.out.println("ingrese el porcentaje de bonificacion del empleado" + (i + 1));
+            System.out.println("Ingrese el porcentaje de bonificación del empleado " + (i + 1));
             p = sc.nextDouble();
             e[i] = new Empleado(d, c, n, dir, ae, an, s, p);
         }
@@ -189,13 +206,28 @@ public class Empresa {
     }
 
     public static void mayorAntiguedad(Empleado e[]) {
+        int mayorAntiguedad = 0;
+        String nombreMayor = "";
         for (Empleado E : e) {
-            if (E.calcularAntiguedad(aa) > m) {
-                m = E.calcularAntiguedad(aa);
-                mn = E.getNombre();
+            int antiguedad = E.calcularAntiguedad(aa);
+            if (antiguedad > mayorAntiguedad) {
+                mayorAntiguedad = antiguedad;
+                nombreMayor = E.getNombre();
             }
         }
-        System.out.println("El empleado con mayor antiguedad es " + mn + " que lleva " + mn + " años en la empresa");
+        System.out.println("El empleado con mayor antigüedad es " + nombreMayor + " que lleva " + mayorAntiguedad + " años en la empresa");
     }
 }
 ```
+
+## Buenas prácticas en POO
+
+- Usa nombres de clases y atributos descriptivos.
+- Declara los atributos como privados y proporciona métodos públicos para acceder/modificar.
+- Utiliza constantes para valores que no cambian.
+- Aplica el encapsulamiento para proteger los datos.
+- Documenta las clases y métodos con comentarios claros.
+
+## Resumen
+
+La POO facilita la organización y reutilización del código. El encapsulamiento y el ocultamiento son fundamentales para proteger los datos y mantener la integridad de los objetos. Los diagramas UML ayudan a visualizar la estructura de las clases antes de programar.

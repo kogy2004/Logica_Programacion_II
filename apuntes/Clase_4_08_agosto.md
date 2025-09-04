@@ -1,3 +1,5 @@
+# Clase 4 - 08 de agosto
+
 ## Ejercicios prácticos
 
 1. Crea un programa que permita al usuario agregar nombres a un `ArrayList` y luego mostrar todos los nombres ingresados.
@@ -7,57 +9,66 @@
 3. Realiza un programa que cree una matriz de 3x3, la llene con números ingresados por el usuario y muestre la suma de cada fila.
 
 4. Escribe un programa que utilice un `HashMap` para almacenar el nombre y la calificación de varios estudiantes, y luego muestre el promedio de las calificaciones.
-# Clase 4 - 08 agosto
 
 ## ArrayList dinámicos
 
-**Librería:** java.util.ArrayList
+**Librería:** `java.util.ArrayList`
 
-// ArrayList es una colección dinámica que permite agregar y quitar elementos fácilmente.
-// Es más flexible que los arreglos tradicionales, pero solo puede almacenar objetos.
+`ArrayList` es una colección dinámica que permite agregar y quitar elementos fácilmente. Es más flexible que los arreglos tradicionales, pero solo puede almacenar objetos.
 
-### Crear
+### Crear un ArrayList
 
 ```java
 import java.util.ArrayList;
-ArrayList<Tipo> nombre = new ArrayList<Tipo>(); // Ejemplo: ArrayList<Integer> lista = new ArrayList<Integer>();
+ArrayList<Tipo> nombre = new ArrayList<Tipo>();
+// Ejemplo:
+ArrayList<Integer> lista = new ArrayList<Integer>();
+ArrayList<String> nombres = new ArrayList<String>();
 ```
 
 ### Métodos principales
 
-* `add(elemento)`: insertar un elemento al final, retorna booleano
-* `add(posición, elemento)`: insertar en posición específica
-* `remove(posición)`: borra la posición indicada
-* `remove(elemento)`: borra el elemento indicado
-* `clear()`: limpia el ArrayList
-* `size()`: devuelve el número de elementos
-* `get(posición)`: devuelve el elemento en la posición indicada
-* `iterator()`: devuelve un iterador para recorrer el ArrayList
-* `isEmpty()`: indica si el ArrayList está vacío
-* `indexOf(elemento)`: devuelve la primera posición del elemento
-* `contains(elemento)`: comprueba si el ArrayList contiene el elemento
-* `toString()`: devuelve una cadena con el ArrayList
-* `lastIndexOf(elemento)`: devuelve la última posición del elemento
-* `set(posición, elemento)`: reemplaza el elemento en la posición indicada
+- `add(elemento)`: inserta un elemento al final, retorna booleano.
+- `add(posición, elemento)`: inserta en posición específica.
+- `remove(posición)`: borra la posición indicada.
+- `remove(elemento)`: borra el elemento indicado.
+- `clear()`: limpia el ArrayList.
+- `size()`: devuelve el número de elementos.
+- `get(posición)`: devuelve el elemento en la posición indicada.
+- `iterator()`: devuelve un iterador para recorrer el ArrayList.
+- `isEmpty()`: indica si el ArrayList está vacío.
+- `indexOf(elemento)`: devuelve la primera posición del elemento.
+- `contains(elemento)`: comprueba si el ArrayList contiene el elemento.
+- `toString()`: devuelve una cadena con el ArrayList.
+- `lastIndexOf(elemento)`: devuelve la última posición del elemento.
+- `set(posición, elemento)`: reemplaza el elemento en la posición indicada.
 
-// Consejo: Si necesitas almacenar tipos primitivos, usa sus clases envolventes (Integer, Double, etc.)
+> **Consejo:** Si necesitas almacenar tipos primitivos, usa sus clases envolventes (`Integer`, `Double`, etc.).
+
+**Ejemplo de uso básico:**
+
+```java
+ArrayList<String> nombres = new ArrayList<String>();
+nombres.add("Ana");
+nombres.add("Luis");
+System.out.println(nombres); // [Ana, Luis]
+```
 
 ## Arrays bidimensionales y HashMap
 
-### Definir matriz
+### Definir una matriz
 
 ```java
 // Definir una matriz (arreglo bidimensional)
 Tipo_de_dato nombre_matriz[][] = new Tipo_de_dato[numFilas][numCols];
 
 // Ejemplo:
-int matriz[][] = new int[numFilas][numCols];
+int matriz[][] = new int[3][3]; // Matriz de 3x3
 ```
 
 ### Acceder a un elemento
 
 ```java
-// Acceder a un elemento de la matriz
 matriz[fila][columna];
 
 // Ejemplo:
@@ -67,7 +78,6 @@ matriz[0][0]; // Primer elemento
 ### Llenar una matriz
 
 ```java
-// Llenar una matriz con datos ingresados por el usuario
 for (int i = 0; i < numFilas; i++) {
     for (int j = 0; j < numCols; j++) {
         System.out.println("Ingrese un número en la fila " + i + " columna " + j);
@@ -79,12 +89,23 @@ for (int i = 0; i < numFilas; i++) {
 ### Imprimir una matriz
 
 ```java
-// Imprimir todos los elementos de la matriz
 for (int i = 0; i < numFilas; i++) {
     for (int j = 0; j < numCols; j++) {
         System.out.print(matriz[i][j] + " ");
     }
     System.out.println(); // Salto de línea al terminar cada fila
+}
+```
+
+### Sumar los elementos de cada fila
+
+```java
+for (int i = 0; i < matriz.length; i++) {
+    int sumaFila = 0;
+    for (int j = 0; j < matriz[i].length; j++) {
+        sumaFila += matriz[i][j];
+    }
+    System.out.println("Suma de la fila " + i + ": " + sumaFila);
 }
 ```
 
@@ -116,6 +137,7 @@ public class NewClass {
 
         mostrar_matriz(mat); // Mostrar la matriz
         sumar_matriz(mat); // Sumar los elementos
+        sumar_filas(mat); // Sumar cada fila
     }
 
     // Llenar la matriz
@@ -148,7 +170,57 @@ public class NewClass {
         }
         System.out.println("La suma de los elementos de la matriz es " + sum);
     }
+
+    // Sumar los elementos de cada fila
+    public static void sumar_filas(int a[][]) {
+        for (int i = 0; i < a.length; i++) {
+            int sumaFila = 0;
+            for (int j = 0; j < a[0].length; j++) {
+                sumaFila += a[i][j];
+            }
+            System.out.println("Suma de la fila " + i + ": " + sumaFila);
+        }
+    }
 }
 ```
 
-// Consejo: Si necesitas asociar claves y valores, usa HashMap.
+## HashMap
+
+**Librería:** `java.util.HashMap`
+
+`HashMap` permite almacenar pares clave-valor, ideal para asociar información como nombres y calificaciones.
+
+### Crear un HashMap
+
+```java
+import java.util.HashMap;
+HashMap<String, Integer> calificaciones = new HashMap<String, Integer>();
+```
+
+### Métodos principales de un HashMap
+
+- `put(clave, valor)`: agrega o actualiza un par clave-valor.
+- `get(clave)`: obtiene el valor asociado a la clave.
+- `remove(clave)`: elimina el par por clave.
+- `containsKey(clave)`: verifica si existe la clave.
+- `containsValue(valor)`: verifica si existe el valor.
+- `size()`: número de pares almacenados.
+- `keySet()`: conjunto de claves.
+- `values()`: colección de valores.
+
+**Ejemplo de uso:**
+
+```java
+HashMap<String, Integer> calificaciones = new HashMap<String, Integer>();
+calificaciones.put("Ana", 8);
+calificaciones.put("Luis", 9);
+
+int suma = 0;
+for (int nota : calificaciones.values()) {
+    suma += nota;
+}
+double promedio = suma / (double) calificaciones.size();
+System.out.println("Promedio: " + promedio);
+```
+
+> **Consejo:** Usa `ArrayList` para listas dinámicas y `HashMap` para asociaciones clave-valor.

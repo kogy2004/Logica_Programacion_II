@@ -1,3 +1,5 @@
+# Clase 3 - 28 de julio
+
 ## Ejercicios prácticos
 
 1. Escribe un programa que imprima los números del 1 al 10 usando un ciclo `for`.
@@ -7,73 +9,112 @@
 3. Realiza un programa que cuente cuántos números pares hay en un arreglo de 10 elementos ingresados por el usuario.
 
 4. Escribe un programa que muestre los elementos de un arreglo en orden inverso.
-# Clase 3 - 28 julio
 
 ## Ciclos
 
 ### while
 
+El ciclo `while` se usa cuando no sabemos cuántas veces se repetirá el proceso.
+
 ```java
-// El ciclo while se usa cuando no sabemos cuántas veces se repetirá el proceso.
 while (condicion) {
     // Acciones del ciclo
     // ¡Cuidado! Si la condición nunca es falsa, el ciclo será infinito.
 }
 ```
 
-### for
+**Ejemplo práctico:**
 
 ```java
-// El ciclo for es ideal cuando conocemos el número de repeticiones.
+int contador = 1;
+while (contador <= 5) {
+    System.out.println("Contador: " + contador);
+    contador++;
+}
+```
+
+### for
+
+El ciclo `for` es ideal cuando conocemos el número de repeticiones.
+
+```java
 for (inicializacion; condicion; incremento) {
     // Acciones del ciclo
 }
-
-// Ejemplo:
-for (int i = 0; i < 10; i++) {
-    System.out.println("Iteración " + i);
-}
-
-// inicialización: int i = 0
-// condición: i < 10
-// incremento: i++ (equivale a i = i + 1)
 ```
+
+**Ejemplo práctico:**
+
+```java
+for (int i = 1; i <= 10; i++) {
+    System.out.println("Número: " + i);
+}
+```
+
+- **Inicialización:** int i = 1
+- **Condición:** i <= 10
+- **Incremento:** i++ (equivale a i = i + 1)
 
 ### do...while
 
+El ciclo `do...while` garantiza que el bloque se ejecuta al menos una vez.
+
 ```java
-// El ciclo do...while garantiza que el bloque se ejecuta al menos una vez.
 do {
     // Acciones del ciclo
 } while (condicion);
 ```
 
+**Ejemplo práctico:**
+
+```java
+int opcion;
+do {
+    System.out.println("Menú principal");
+    // ...mostrar opciones...
+    opcion = sc.nextInt();
+} while (opcion != 0);
+```
+
 ## Arreglos (Vectores)
 
-* **Homogéneos:** contiene datos de un mismo tipo (por ejemplo, solo enteros).
-* **Ordenados:** cada posición está identificada por un índice (empieza en 0).
-* **Finitos:** tiene un tamaño preestablecido que no puede cambiar.
+- **Homogéneos:** contienen datos de un mismo tipo (por ejemplo, solo enteros).
+- **Ordenados:** cada posición está identificada por un índice (empieza en 0).
+- **Finitos:** tienen un tamaño preestablecido que no puede cambiar.
 
 ### Definir vectores
 
-// Sintaxis para definir un vector:
-Tipo_de_dato nombre_vector[] = new Tipo_de_dato[tamaño];
+Sintaxis para definir un vector:
 
-// Ejemplo:
+```java
+Tipo_de_dato nombre_vector[] = new Tipo_de_dato[tamaño];
+```
+
+**Ejemplo:**
+
+```java
 int vec[] = new int[8]; // Vector de 8 enteros
+```
 
 ### Acceder a elementos del vector
 
-// Para asignar un valor a una posición:
-nombre_vector[posicion] = valor;
+Para asignar un valor a una posición:
 
-// Ejemplo:
+```java
+nombre_vector[posicion] = valor;
+```
+
+**Ejemplo:**
+
+```java
 vec[4] = 9; // Asigna 9 a la posición 4
+```
 
 ### Llenar un vector
 
+Llenar un vector con datos ingresados por el usuario:
+
 ```java
-// Llenar un vector con datos ingresados por el usuario
 for (int posicion = 0; posicion < tamaño; posicion++) {
     System.out.println("Ingrese el elemento en la posición " + posicion);
     nombre_vector[posicion] = sc.nextInt();
@@ -82,11 +123,26 @@ for (int posicion = 0; posicion < tamaño; posicion++) {
 
 ### Mostrar el vector
 
+Imprimir todos los elementos del vector:
+
 ```java
-// Imprimir todos los elementos del vector
 for (int posicion = 0; posicion < tamaño; posicion++) {
     System.out.println(nombre_vector[posicion]);
 }
 ```
 
-// Consejo: Los arreglos tienen tamaño fijo. Si necesitas una colección dinámica, usa ArrayList.
+### Recorrer un arreglo en orden inverso
+
+**Ejemplo:**
+
+```java
+for (int i = tamaño - 1; i >= 0; i--) {
+    System.out.println(nombre_vector[i]);
+}
+```
+
+> **Consejo:** Los arreglos tienen tamaño fijo. Si necesitas una colección dinámica, usa `ArrayList` en Java.
+
+## Resumen
+
+Los ciclos (`while`, `for`, `do...while`) permiten repetir acciones de manera controlada. Los arreglos son estructuras fundamentales para almacenar y manipular conjuntos de datos del mismo tipo. Es importante elegir el ciclo y la estructura adecuada según el problema a resolver.

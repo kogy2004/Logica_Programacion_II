@@ -1,13 +1,13 @@
+# Clase 1 - 21 de julio
+
 ## Ejercicios prácticos
 
 1. Escribe un programa que pida al usuario dos números enteros y muestre su suma, resta, multiplicación y división.
-
 2. Crea un programa que solicite el nombre y la edad de una persona, y muestre un mensaje indicando si es mayor de edad.
-
 3. Realiza un programa que lea un número y muestre si es par o impar usando una estructura condicional.
-
 4. Escribe un programa que calcule la potencia de un número usando `Math.pow` y lo muestre por pantalla.
-# Clase 1 - 21 julio
+5. Escribe un programa que lea una cadena y muestre cuántos caracteres tiene.
+6. Crea un programa que solicite al usuario un carácter y determine si es una vocal o consonante.
 
 ## Tipos de datos
 
@@ -16,47 +16,53 @@
 * **Reales:** `float`, `double`  
     Permiten decimales. Ejemplo: precio, altura.
 * **Booleano:** `boolean`  
-    Solo puede ser `true` o `false`. Ejemplo: ¿es mayor de edad?
-* **Caracter:** `char`  
+    Solo puede ser `true` o `false`. Ejemplo: ¿Es mayor de edad?
+* **Carácter:** `char`  
     Almacena un solo carácter. Ejemplo: 'A', 'b'.
 * **Cadena:** `String`  
     Almacena texto. Ejemplo: nombre, dirección.
 
+> **Nota:** En Java, los tipos primitivos (`int`, `float`, etc.) no son objetos, pero existen clases envolventes como `Integer`, `Float`, etc., que permiten trabajar con ellos como objetos.
+
 ## Introducción de entrada por teclado
 
-### Opción #1
+### Opción 1: Scanner
 
-// Importar la librería Scanner para leer datos desde la consola
+```java
 import java.util.Scanner; // Librería para trabajar con Scanner
-
-// Crear el objeto Scanner
 Scanner sc = new Scanner(System.in); // Definición y creación del Scanner
-
-// Leer diferentes tipos de datos
 int numero = sc.nextInt(); // Leer un entero
 boolean respuesta = sc.nextBoolean(); // Leer un booleano
 float decimal = sc.nextFloat(); // Leer un real
+String texto = sc.nextLine(); // Leer una cadena
+```
 
-// ¡Advertencia! Si mezclas nextInt() y nextLine(), puede haber problemas con saltos de línea. Usa sc.nextLine() para limpiar el buffer si es necesario.
+> **Advertencia:** Si mezclas `nextInt()` y `nextLine()`, puede haber problemas con saltos de línea. Usa `sc.nextLine()` para limpiar el buffer si es necesario.
 
-### Opción #2
+### Opción 2: JOptionPane
 
-// Importar la librería para cuadros de diálogo
+```java
 import javax.swing.*; // Librería para cuadros de diálogo
-
-// Leer un entero usando un cuadro de diálogo
 int numero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un número"));
-// 'parseInt' transforma el texto ingresado en un número entero
-
-// Leer una cadena de texto
 String texto = JOptionPane.showInputDialog("Ingrese su nombre");
+```
 
 ## Instrucción de salida por pantalla
 
-### Opción #1
+### Opción 1: Consola
 
+```java
 System.out.println("Ingrese el primer número"); // Mostrar un mensaje
-System.out.println("Ingrese el primer número " + variable); // Imprimir variable junto al texto
+System.out.println("El resultado es: " + variable); // Imprimir variable junto al texto
+```
+
+### Opción 2: Cuadro de diálogo
+
+```java
+JOptionPane.showMessageDialog(null, "El resultado es: " + variable);
+```
+
+> **Consejo:** Usa comentarios claros y descriptivos en tu código para facilitar la comprensión.
 
 // El sufijo 'ln' en println significa "line" y hace un salto de línea después de imprimir el texto
 
