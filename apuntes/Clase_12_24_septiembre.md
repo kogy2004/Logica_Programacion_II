@@ -258,3 +258,145 @@ public class Gui4 extends JFrame {
     }
 }
 ```
+
+> Gui6.java
+
+```java
+package interfases;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Gui6 extends JFrame {
+
+    JMenuBar barra;
+    JMenu archivo, edicion;
+    JMenuItem opcion1, opcion2, opcion3, submenu1, submenu2;
+
+    public Gui6() {
+        FlowLayout F = new FlowLayout();
+        F.setAlignment(0);
+        setLayout(F);
+
+        barra = new JMenuBar();
+        add(barra);
+
+        archivo = new JMenu("Archivo");
+        barra.add(archivo);
+
+        edicion = new JMenu("Edicion");
+        barra.add(edicion);
+
+        opcion1 = new JMenuItem("Opcion 1");
+        archivo.add(opcion1);
+        opcion1.addActionListener(new menu1());
+
+        opcion2 = new JMenuItem("Opcion 2");
+        archivo.add(opcion2);
+
+        archivo.add(new JSeparator());
+        opcion3 = new JMenu("Opcion 3");
+        archivo.add(opcion3);
+
+        submenu1 = new JMenuItem("Submenu 1");
+        opcion3.add(submenu1);
+
+        submenu2 = new JMenuItem("Submenu 2");
+        opcion3.add(submenu2);
+
+        setSize(1350, 700);
+        setVisible(true);
+        setTitle("SIstema IUE");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+
+    public static void main(String[] args) {
+        Gui6 ventana = new Gui6();
+    }
+
+    private static class menu1 implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Gui4 ventana2 = new Gui4();
+        }
+
+    }
+}
+```
+
+> Gui8.java
+
+```java
+package interfases;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Gui8 extends JFrame {
+    
+    JLabel etiqueta;
+    JTextField caja;
+    JButton cambiarColor, ocultar;
+    
+    public Gui8() {
+        setLayout(new FlowLayout());
+        
+        etiqueta = new JLabel("Etiqueta");
+        add(etiqueta);
+        
+        caja = new JTextField(18);
+        add(caja);
+        
+        cambiarColor = new JButton("Cambiar color");
+        add(cambiarColor);
+        
+        cambiarColor.addActionListener(new Boton());
+        
+        ocultar = new JButton("Ocultar");
+        add(ocultar);
+        
+        ocultar.addActionListener(new Boton1());
+        
+        setSize(600, 100);
+        setVisible(true);
+        setTitle("Cambiar colores");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+    
+    public static void main(String[] args) {
+        Gui8 ventana = new Gui8();
+    }
+    
+    private class Boton implements ActionListener {
+        
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            etiqueta.setVisible(true);
+            caja.setVisible(true);
+            
+            etiqueta.setText("Nueva etiqueta");
+            etiqueta.setForeground(Color.DARK_GRAY);
+            
+            caja.setFocusable(false);
+            caja.setText("Texto color rojo");
+            caja.setForeground(Color.gray);
+            caja.setBackground(Color.green);
+            
+                       ocultar.setForeground(Color.PINK);
+            ocultar.setBackground(Color.YELLOW);
+        }
+    }
+    
+    private class Boton1 implements ActionListener {
+        
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            etiqueta.setVisible(false);
+            caja.setVisible(false);
+        }
+    }
+}
+```
